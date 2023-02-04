@@ -142,6 +142,8 @@ body {
 	}
 }
  </style>
+    <script src="../lib/global.js?v=20221224"></script>
+    <script src="../lib/crypto-js.min.js"></script>
   </head>
   <body>
 <div id="clock" class="progress-clock">
@@ -194,6 +196,9 @@ body {
 	</svg>
 </div>
     <script>
+	const params = getAllParams(CryptoJS);
+    handleDarkMode(params);
+	console.log(params)
 	window.addEventListener("DOMContentLoaded",() => {
 	const clock = new ProgressClock("#clock");
 });
@@ -205,6 +210,53 @@ class ProgressClock {
 		this.updateTimeout = null;
 		this.ringTimeouts = [];
 		this.update();
+	}
+	
+	getDayOfWeek_cn(day) {
+		switch (day) {
+			case 1:
+				return "周一";
+			case 2:
+				return "周二";
+			case 3:
+				return "周三";
+			case 4:
+				return "周四";
+			case 5:
+				return "周五";
+			case 6:
+				return "周六";
+			default:
+				return "周日";
+		}
+	}
+	getMonthInfo_cn(mo,yr) {
+		switch (mo) {
+			case 1:
+				return { name: "二月", days: yr % 4 === 0 ? 29 : 28 };
+			case 2:
+				return { name: "三月", days: 31 };
+			case 3:
+				return { name: "四月", days: 30 };
+			case 4:
+				return { name: "五月", days: 31 };
+			case 5:
+				return { name: "六月", days: 30 };
+			case 6:
+				return { name: "七月", days: 31 };
+			case 7:
+				return { name: "八月", days: 31 };
+			case 8:
+				return { name: "九月", days: 30 };
+			case 9:
+				return { name: "十月", days: 31 };
+			case 10:
+				return { name: "十一月", days: 30 };
+			case 11:
+				return { name: "十二月", days: 31 };
+			default:
+				return { name: "一月", days: 31 };
+		}
 	}
 	getDayOfWeek(day) {
 		switch (day) {
@@ -264,8 +316,15 @@ class ProgressClock {
 			const hr = this.time.getHours();
 			const min = this.time.getMinutes();
 			const sec = this.time.getSeconds();
-			const dayOfWeekName = this.getDayOfWeek(dayOfWeek);
-			const monthInfo = this.getMonthInfo(month,year);
+			let dayOfWeekName;
+			let monthInfo;
+			if(params.lan === "en" )
+			dayOfWeekName = this.getDayOfWeek(dayOfWeek)
+			else  dayOfWeekName =this.getDayOfWeek_cn(dayOfWeek);
+			if(params.lan === "en" )
+			monthInfo = this.getMonthInfo(month,year) 
+			else monthInfo = this.getMonthInfo_cn(month,year);
+			
 			const m_progress = sec / 60;
 			const h_progress = (min + m_progress) / 60;
 			const d_progress = (hr + h_progress) / 24;
@@ -301,7 +360,7 @@ class ProgressClock {
 				},
 				{
 					label: "ap",
-					value: hr > 12 ? "PM" : "AM"
+					value: hr > 12 ? params.lan === "en" ?"PM":"下午" : params.lan === "en" ?"AM":"上午" 
 				}
 			];
 
