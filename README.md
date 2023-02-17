@@ -1,3 +1,12 @@
+<!--
+ * @Author: httishere
+ * @Date: 2021-08-13 11:29:16
+ * @LastEditTime: 2022-08-26 15:38:30
+ * @LastEditors: TinaHuang0183 
+ * @Description: In User Settings Edit
+ * @FilePath: /notion/README.md
+-->
+# [notion-widget](http://httishere.gitee.io/notion/)
 
 ## Features
 
@@ -25,22 +34,22 @@
 
 ## Demos
 
-- 倒计时&进度条：[DEMO](https://cuman.pptest.com.cn/widgets-html/progress.html)
+- 倒计时&进度条：[DEMO](http://httishere.gitee.io/notion/progress.html)
 
-- 简易日期倒计时：[DEMO](https://cuman.pptest.com.cn/widgets-html/days-matter.html)
+- 简易日期倒计时：[DEMO](http://httishere.gitee.io/notion/days-matter.html)
   - 自定义目标日期和目标日名称，url参数：day（目标日期），name（目标日名称）
 
 - 引用块（多风格）：
-  - 乳白色字体：适合短分案，大字体，标题等，[DEMO](https://cuman.pptest.com.cn/widgets-html/quote.html?text=test)
+  - 乳白色字体：适合短分案，大字体，标题等，[DEMO](http://httishere.gitee.io/notion/quote.html?text=test)
     - 自定义文案内容，url参数：text（文案内容）
 
-  - 边框阴影文案：适合繁体和英文文案，中等字体，该字体无法识别部分简体字，[DEMO](https://cuman.pptest.com.cn/widgets-html/quote2.html?text=test)
+  - 边框阴影文案：适合繁体和英文文案，中等字体，该字体无法识别部分简体字，[DEMO](http://httishere.gitee.io/notion/quote2.html?text=test)
     - 自定义文案内容，url参数：text（文案内容）
 
-  - 细文字：适合繁体和英文文案，中等字体，该字体无法识别部分简体字，[DEMO](https://cuman.pptest.com.cn/widgets-html/quote3.html?text=test)
+  - 细文字：适合繁体和英文文案，中等字体，该字体无法识别部分简体字，[DEMO](http://httishere.gitee.io/notion/quote3.html?text=test)
     - 自定义文案内容，url参数：text（文案内容）
 
-  - 可爱英文手写体：仅适用于英文，[DEMO](https://cuman.pptest.com.cn/widgets-html/quote-EN.html?text=test)
+  - 可爱英文手写体：仅适用于英文，[DEMO](http://httishere.gitee.io/notion/quote-EN.html?text=test)
     - 自定义文案内容，url参数：text（文案内容）
 
 - 日历
